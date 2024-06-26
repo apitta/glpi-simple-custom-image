@@ -37,10 +37,9 @@ RUN rm /glpi-10.0.15.tgz
 
 COPY apache/httpd.conf.final /usr/local/apache2/conf/httpd.conf
 COPY apache/fpm-www.conf /etc/php83/php-fpm.d/www.conf
-COPY supervisor /etc/supervisor
-COPY index.php /usr/local/apache2/htdocs
-COPY sshd/sshd_config /etc/ssh/sshd_config
 COPY php/php.ini /etc/php83/
+COPY sshd/sshd_config /etc/ssh/sshd_config
+COPY supervisor /etc/supervisor
 
 RUN adduser -s /bin/ash -g root -u 1000 -D admin
 
